@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2023 |
+            R-learning-notes-3 |
         
         Study Record
     </title>
@@ -79,7 +79,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -129,7 +129,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -159,76 +159,138 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">R-learning-notes-3</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Wanli Du</span>
+                            
+                                <span class="author-label">Lv1</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
         
-<div class="archive-list-container">
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-01-06 19:57:55</span>
+        <span class="mobile">2023-01-06 19:57</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[5]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/06/R-learning-notes-3/"
-                        >R-learning-notes-3</a>
-                        <span class="article-date">01-06</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/05/R-learning-notes-2/"
-                        >R-learning-notes-2</a>
-                        <span class="article-date">01-05</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/04/R-learning-notes-1/"
-                        >R-learning-notes-1</a>
-                        <span class="article-date">01-04</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/03/house-sales-competition-2/"
-                        >house-sales-competition-2</a>
-                        <span class="article-date">01-03</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/02/house-sales-competition-1/"
-                        >house-sales-competition-1</a>
-                        <span class="article-date">01-02</span>
-                    </li>
-                
-            </ul>
-        </section>
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-01-06 19:59:06</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[1]</span>
-            </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/10/25/hello-world/"
-                        >Hello World</a>
-                        <span class="article-date">10-25</span>
-                    </li>
-                
-            </ul>
-        </section>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>620 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                <p>R learning notes 3<br>Category: R<br>Text:<br>Review:<br>unnest() is a function that is used to turn a XML data into a list, it could return unnest_wider or unest_longer.<br>uncount() performs the opposite to count(), which duplicates rows according to a weighting variable. Although this form is much larger than the original, it is easier to process.</p>
+<p>-1 Recoding the data<br>First, after importing the data, we can enter as_tibble() %&gt;%  print() command to check the data type. If it is <chr>, we need to define this column as factor: ‘mutate(A&#x3D;as.factor(A))’<br>If we don’t need all the data, we can continue to text select() function to keep the data we need.<br>In the data analysis part, we can use a boxplot of the values to check for outliers or check the frequency of some features.<br>For categorical variables, we can relevel them to a more intuitive form.<br>•	fct_relevel() is the factor relevel, then we can use ggplot() and draw bar chart of it.<br>•	fct_infreq() : relevel by descending frequencies: the tallest on the left and the smallest on the right. The frequencies are tapering down in the chart, so we can easier to analyze them.<br>Collapse categories:<br>•	fct_collapse(): to create new levels with selected names<br>•	fct_lump(): collapse categories by rank; n is how many to keep distinct, and then lump and combine all the rest of them.<br>•	fct_lump_min(): collapse by frequencies, min is the setting of n% cutoff.<br>•	fct_other(  ,keep&#x3D;‘ ’) : keep only specified category, other levels are collapsed into a new ‘other’ level.<br>Remove levels:<br>We can use filter() to select some levels with logical signs commands.<br>-2 Recoding quantitative data<br>•	Reorder the data by mathematic operation<br>•	Standardizing values with z-scores: use scale() to transform data to z-scores, normal distribution N(0,1). If the data is standardized, they are all on the same scale. We cannot change the standard deviation, but we can choose what item to display. If scale(, scale&#x3D;False), it means we only adjust to deviations from the mean.<br>•	Standardizing to other values:<br>•	T-scores: it has a mean of 50 and SD of 10<br>             scale() %&gt;% ‘*’(10)  %&gt;% ‘+’(50)<br>-3 Transform outliers:<br>We need to know the importance of outliers, what are our options, and the statistical meaning behind them. In order to visualize the data, we can use hist(), and boxplot() (shows the middle range or most data’s compressed distribution). They are commonly used for standard analysis like scatter plots and means.<br>If we want to focus on the non-outline scores, we can remove the outliers. It depends on how to define the sample and want conclusions we want to draw.<br>There is another way to bring in outliers called ‘Winsorizing’.<br>We can also create new groups with mutate( &#x3D;ifelse() ).<br>-4 Creating scale scores by counting<br>•	Create new variables to count variables that meet the criterion:<br>df &lt;- df %&gt;%<br>  mutate(<br>    artsCount &#x3D;                       # Create a new variable<br>      ifelse(museum &gt; 1, 1, 0) +      # Add 1 if true<br>      ifelse(scrapbook &gt; 1, 1, 0) +   # Add 1 if true<br>      ifelse(modernDance &gt; 1, 1, 0)   # Add 1 if true<br>  )<br>•	Create categories with the case when:<br>df %&lt;&gt;%<br>  mutate(<br>    likeArts &#x3D; case_when(<br>      museum &gt; 1 | scrapbook &gt; 1 | modernDance &gt; 1 ~ “yes”,<br>      TRUE ~ “no”  # All other values<br>    )<br>  ) %&gt;%<br>  select(<br>    state_code,<br>    likeArts,<br>    artsCount,<br>    museum:modernDance) %&gt;%<br>  arrange(desc(artsCount)) %&gt;%<br>  print(n &#x3D; Inf)<br>•	Other packages of R-project: psych, Scale also work.<br>-5 Creating scale scores by averaging scores:<br>df %&lt;&gt;%<br>  mutate(<br>    artsCrafts &#x3D; rowMeans(df %&gt;%   # Select data<br>      select(museum:modernDance),  # Select columns<br>      na.rm &#x3D; TRUE)                # Remove missing values<br>  ) %&gt;%<br>  arrange(desc(artsCrafts)) %&gt;%    # Put in descending order<br>  print(n &#x3D; Inf)                   # Display all rows</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li>
+            <span class="type">本文标题</span>：<span class="content">R-learning-notes-3</span>
+        </li>
+        <li>
+            <span class="type">本文作者</span>：<span class="content">Wanli Du</span>
+        </li>
+        <li>
+            <span class="type">创建时间</span>：<span class="content">2023-01-06 19:57:55</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">2023/01/06/R-learning-notes-3/</span>
+        </li>
+        <li>
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/01/05/R-learning-notes-2/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">R-learning-notes-2</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        
     </div>
 </div>
+
+            </div>
+        
+    </div>
+</div>
+
 
                 
             </div>
@@ -273,6 +335,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -371,6 +450,14 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.5.2/source/js/toc.js"></script>
+        
     
 </div>
 
