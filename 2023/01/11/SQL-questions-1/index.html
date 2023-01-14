@@ -191,7 +191,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-11 19:03:51</span>
+        <span class="pc">2023-01-13 19:00:11</span>
     </span>
     
     
@@ -200,12 +200,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>707 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>4 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
         </span>
     
     
@@ -252,6 +252,32 @@
 <p>select customers.name as ‘Customers’<br>from Customers<br>where Customers.id not in (select customerid from Orders);</p>
 <p>Summary：<br> When using ‘where’ command to select, we should be aware of the logical signs and the target to represent. If needed we rename some columns.</p>
 <p>SELECT Customers.name AS Customers<br>FROM Customers<br>LEFT JOIN Orders<br>ON Customers.id &#x3D; Orders.customerId<br>WHERE Orders.customerId is null;<br>From：<a class="link"   target="_blank" rel="noopener" href="https://leetcode.com/problems/customers-who-never-order/solutions/2620211/easy-joins-with-attached-document/" >https://leetcode.com/problems/customers-who-never-order/solutions/2620211/easy-joins-with-attached-document/<i class="fas fa-external-link-alt"></i></a></p>
+<ol start="1873">
+<li>Calculate Special Bonus<br>Table: Employees<br>+————-+———+<br>| Column Name | Type    |<br>+————-+———+<br>| employee_id | int     |<br>| name        | varchar |</li>
+</ol>
+<p>| salary      | int     |<br>+————-+———+<br>employee_id is the primary key for this table.<br>Each row of this table indicates the employee ID, employee name, and salary.</p>
+<p>Write an SQL query to calculate the bonus of each employee. The bonus of an employee is 100% of their salary if the ID of the employee is an odd number and the employee name does not start with the character ‘M’. The bonus of an employee is 0 otherwise.<br>Return the result table ordered by employee_id.<br>The query result format is in the following example.<br>solution 1 ( union statement)<br>– SOLUTION  - 1 :<br>        – select entries with odd  employee id and name not start with M<br>            select employee_id , salary as bonus<br>            from employees<br>            where employee_id%2 &lt;&gt;0 and name not like ‘M%’</p>
+<pre><code>    -- join both selection 
+        union
+        
+    -- select remaining entries from table 
+        select employee_id , 0 as bonus
+        from employees
+        where employee_id%2 = 0 or name like &#39;M%&#39;
+        order by employee_id;
+</code></pre>
+<p>solution 2 ( simple )<br>    select employee_id , salary * ( employee_id%2 ) * ( name not like ‘M%’) as bonus<br>    from employees<br>order by employee_id;	<br>Here ‘*’ means simply multiply<br>if employee_(id is even then ( employee id %2 return 1 )<br>if( name is not start with M then it return 1<br>else return 0<br>if return value is zero , then on multiplying with salary bonus become 0<br>else bonus is equal to salary<br>solution 3 ( case statement )<br>   select employee_id ,<br>   case when employee_id%2 &lt;&gt;0 and name not like ‘M%’ then salary<br>   else 0<br>   end<br>   as bonus<br>   from employees<br>   order by employee_id;</p>
+<ol start="627">
+<li>Swap Salary<br>+————-+———-+<br>| Column Name | Type     |<br>+————-+———-+<br>| id          | int      |</li>
+</ol>
+<p>| name        | varchar  |<br>| sex         | ENUM     |<br>| salary      | int      |<br>+————-+———-+<br>id is the primary key for this table.<br>The sex column is ENUM value of type (‘m’, ‘f’).<br>The table contains information about an employee.</p>
+<p>Write an SQL query to swap all ‘f’ and ‘m’ values (i.e., change all ‘f’ values to ‘m’ and vice versa) with a single update statement and no intermediate temporary tables.<br>Note that you must write a single update statement, do not write any select statement for this problem.<br>The query result format is in the following example.<br>update Salary set sex&#x3D; if(sex&#x3D;’f’,’m’,’f’);</p>
+<ol start="1045">
+<li>Customers Who Bought All Products<br>able: Customer<br>+————-+———+<br>| Column Name | Type    |<br>+————-+———+<br>| customer_id | int     |<br>| product_key | int     |<br>+————-+———+<br>There is no primary key for this table. It may contain duplicates.<br>product_key is a foreign key to Product table.</li>
+</ol>
+<p>Table: Product<br>+————-+———+<br>| Column Name | Type    |<br>+————-+———+<br>| product_key | int     |<br>+————-+———+<br>product_key is the primary key column for this table.</p>
+<p>Write an SQL query to report the customer ids from the Customer table that bought all the products in the Product table.<br>Return the result table in any order.<br>The query result format is in the following example.<br>select customer_id<br>from customer<br>group by customer_id<br>having count(distinct product_key)&#x3D;(select count(distinct product_key) from product)<br>196. Delete Duplicate Emails<br>Table: Person<br>+————-+———+<br>| Column Name | Type    |<br>+————-+———+<br>| id          | int     |<br>| email       | varchar |<br>+————-+———+<br>id is the primary key column for this table.<br>Each row of this table contains an email. The emails will not contain uppercase letters.</p>
+<p>Write an SQL query to delete all the duplicate emails, keeping only one unique email with the smallest id. Note that you are supposed to write a DELETE statement and not a SELECT one.<br>After running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.<br>The query result format is in the following example.<br>DELETE p1 FROM Person p1,<br>    Person p2<br>WHERE<br>    p1.Email &#x3D; p2.Email AND p1.Id &gt; p2.Id</p>
 
             </div>
 
