@@ -9,7 +9,7 @@
     
     <title>
         
-            SQL-learning-notes-1 |
+            machine-learning-note |
         
         Study Record
     </title>
@@ -163,7 +163,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">SQL-learning-notes-1</span>
+                <span class="title-hover-animation">machine-learning-note</span>
             </div>
 
             
@@ -185,13 +185,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-01-12 19:41:46</span>
-        <span class="mobile">2023-01-12 19:41</span>
+        <span class="pc">2023-02-02 19:52:34</span>
+        <span class="mobile">2023-02-02 19:52</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-01-13 19:01:36</span>
+        <span class="pc">2023-02-02 19:53:54</span>
     </span>
     
     
@@ -200,12 +200,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>7 分钟</span>
         </span>
     
     
@@ -221,9 +221,8 @@
             
 
             <div class="article-content keep-markdown-body">
-                <p>QuickStart: Using client libraries<br><a class="link"   target="_blank" rel="noopener" href="https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-usage-python" >https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-usage-python<i class="fas fa-external-link-alt"></i></a><br>First, install the client library from google cloud big query and then import the libraries. Later, we can use the authenticated big query client. </p>
-<p>SQL essential training:<br>1 SQL overview<br>SQL is designed for specific tasks with related databases. It’s a single language with a single syntax. A statement is a unitive execution in SQL.<br>The SELECT statement retrieves the rows from the table and the WHERE clause represents the comparison. It often includes one or more clauses, for example, the FROM clause which specifies the table that the SELECT statement will use., and the WHERE clause specifies which rows will be selected by using a logical expression.<br>The executive sentence usually ends with a semicolon. Besides, the white space is ignored.<br>The fundamental functions are created, read, update and delete.<br>SELECT is used for all queries that return values and retrieve information from the database.’*’ is used to get all the rows and columns. It is used to retrieve data from a SQL database.<br>COUNT functions can count rows without listing them after the SELECT clause.</p>
-<p>INSERT statement is used to add a row to a table that can specify the table and the columns, then the data will be filled in those columns. In order to make the code more readable, we can indent the second line to indicate it’s part of the same statement.<br>The UPDATE statement is used to change data with SET and WHERE to select the place to be updated.<br>DELETE is used to remove rows from a table.<br>Database Organization:<br>A relational database has many tables with rows and tables. A unique key identifies a table row and sometimes the unique key is hidden but the table must have one. This unique key is also called the primary key which means that the column is used as the unique key for this table. The tables’ keys are used to create some relationships between tables. If one table has keys that refer to the keys of other tables, they are called foreign keys.<br>We can press F9 to execute the query as well as the run button.<br>It is not necessary to capitalize the SQL keywords, but it’s a good way to set the command apart, parse a complicated query and make the code more readable.<br>A single quote is used for literal strings in SQL, while double quotes are used to set an identifier that allows empty space in it.<br>AS is also a keyword to set the column name which creates an alias identifier for the column. Sometimes the AS keyword is omitted but it still works. Usually, we enter the whole clause for legibility. We can change the order of the headings by changing the order of the words after the AS commands. Besides., we can choose which columns to return by listing columns in the selected statement.<br>ORDER BY clause can display the table in a specific value.<br>LIMIT can restrict the rows in the result and OFFSET helps to show the next n value after the first set number. LIMIT and OFFSET need to be last and FROM needs to be first.<br>Exercises:<br>You must execute the select statement after the insert into a statement to see the result with the added row. The inserted columns and values must be placed inside parentheses. The unpopulated columns are given a null value.<br>The DELETE FROM statement removes rows from a table and once a row has been deleted it cannot be recovered.  The DELETE FROM statement is not used to remove columns from a table. The asterisk is not necessary for the code to remove a row from a table.<br>You can query columns in any order.???? With a decent query optimizer: it shouldn’t.<br>You can only tell for your cases by measuring. And the measurements will likely change as the distribution of data changes in the database.<br>2 Fundamental Concepts<br>Creating a table:<br>CREATE TABLE with the table name and table schema between the parentheses. Each column starts with its column name and is followed by the type declaration. Then a table will be created in the selected database. We should first execute the insert with data and then select to see the solution. The PRIMARY KEY is also selected in this statement. The CREATE TABLE statement defines the table columns, defines the table schema, and creates a table.<br>DROP TABLE statement is used to delete the table. Also, we can use the DROP TABLE IF EXISTS to delete the table or do nothing if the specified table does not exist.<br>We can just add a row to the table after creating a new table or execute in an existing table by INSERT INTO statement. After specifying multiple columns, we can insert data in corresponding positions in the same order with comma separated. Besides, we can add SELECT FROM to import data from other table and add the value to the column.<br>DELETE FROM is used to delete a row in an existing table and is specified with a WHERE clause.<br>Null is a special statement of value that is different from zero which means a lack of value and you can type DEFAULT VALUE to get NULL. It is important to distinguish between a zero value or an empty string ‘ ‘ or a non-value result. Instead of viewing data as a &#x3D; NULL, we view it as an absence of value. As a result, when we want to test for NULL in a specific column we use WHERE a is NULL.  If we first state a NOT NULL statement in CREATE TABLE command, we should insert every column or get an error while executing.<br>Constraint tables: In the CREAT TABLE command we can set DEFAULT value or UNIQUE constraint. The NULL value might be exempt from the unique constraint. We also need to be aware of which condition of own database may work or not.<br>ALTER TABLE is used to change the schema. Then by using ADD we can add columns as NULL or set a default value.<br>The ID column is used to hold a unique value for each row in a table. The different database systems may have different creation methods.<br>In the data filtering part, we can use SELECT FROM WHERE … LIKE ‘% %’ to find the string in the data. In specific, we can use ‘_a%’ to select the second character which is needed. The IN operator can select results that match the values in a list.<br>If we want to remove the duplications, we can use the SELECT DISTINCT statement to find the distinct result.<br>ORDER BY clause is used to tidy up the data. Then DESC means descending order while ASC is short for ascending order and is used as default. Besides, we can add more column after the ORDER BY clause to set the order.<br>SQL provides a form of conditional expressions. For example, SELECT CASE WHEN .. THEN ‘..’ ELSE ‘..’ END<br>Exercises:<br>To insert a blank row, use the DEFAULT VALUES clause.<br>The DROP TABLE IF EXISTS statement enables a check to see that the table exists prior to attempting the deletion of the table. The DROP TABLE statement enables you to delete a table from a database and if the table did not exist then attempting to DROP it would cause an error to occur.<br>Why do you need to be careful and consult documentation when altering an existing table? Some systems may allow different syntax and permit different functionality.<br>How do you add a new column and its data type to an existing table? Once a table has been created, use the ALTER TABLE statement to add a new column and its data type. The DROP TABLE statement allows you to delete an existing table, but it is not necessary to delete and recreate an existing table to make changes to its schema.<br>SQL provides a conditional expression that allows different results based on a logical value.<br>A table schema refers to the number of, titles for, and data types in columns. The number of records is not defined.</p>
+                <p>Overview of machine learning<br>Machine learning is started from the spam filter well it is realized with the machine learning principles. It is a science that means computers can learn from data by programming. Usually, computers can learn from several loops while learning from data, they can execute by the written rules and then evaluate the target value and print out the good results or improve the mechanism by fixing the analysis errors. Data mining is used to discover patterns in digging large amounts of data.<br>Machine learning is commonly used to solve problems with existing solutions but also requires hand-tuning or long lists of rules, currently not well-solved complex problems, fluctuating environments with fresh data updated, and targets with a large amount of data.<br>We can classify machine learning systems by analyzing whether the data are trained with human supervision, whether they can learn incrementally on the fly, and whether they compare the new data or build a predictive model.<br>In supervised learning, the training data typed into the algorithm includes the desired solutions called labels. For example, the classification progress will let the system learn from the class, the predictors can analyze a set of features and then get a useful regression. K-Nearest Neighbors, Linear Regression, Logistic Regression, Support Vector Machines, Decision Trees and Random Forests, and Neural networks are some algorithms applied to supervised learning methods. Other learning algorithms are unsupervised learning, semisupervised learning, and reinforcement learning.<br>The system incapable of incremental learning is called batch learning while it must be trained using all the available data. This method is not convenient when solving large amounts of data. By contrast, in online learning, the system can learn about new data on the fly.<br>When constructing an algorithm for some specific question, we may face a lot of problems. Therefore, we always need to be aware of the insufficient quantity of training data, nonrepresentative training data, and poor quality data. We can choose to drop some irrelevant features and avoid fitting problems in the training data. If we focus too much and overgeneralize the training data, it will cause overfitting. The possible solutions are simplifying the model by selecting fewer parameters, gathering more training data, and reducing the noise in the training data. The underfitting model is too simple to learn the underlying structure of the data, so we need to add more parameters to the model and feed better features to predict. The system will not perform well if the training data is not enough or does not represent, noisy, or polluted.<br>The process to check the model’s performance in new data can be realized by splitting the original data into the training set and the test set. If we want to select better algorithms, we can import hyperparameter methods to check their performance.</p>
+<p>A complete project process<br>The main steps are: have a look at the big picture of the whole dataset, import the data and packages, discover and visualize the data to gain insights, prepare the data for machine learning algorithms, select a model and train it, fine-tune the parameters and settings in the model, present the solution, then launch, monitor, and maintain the system.<br>Take the California Housing Price dataset for example.<br>Look at the big picture: We find out the implements of the data.<br>Frame the problem: Clarify the problem we need to solve. If the processing is complex, we can use pipelines to integrate some methods.<br>Select a performance measure: If we want to predict a numerical feature, we can evaluate the performance by calculating the errors between the predicted value and the real value. For example, we can compare Root Mean Square Error (RMSE), Mean Absolute Error (MSE), or other methods.<br>Check the assumptions: One of the good ideas is to list some assumptions and then verify them.<br>Create a workspace and download the data<br>Create a test set: Pick some instances randomly for example 20% of the dataset. Commonly we can use the train_test_split command from the sklearn’s model_selection<br>and set the test ratio.<br>Discover and visualize the data to gain insights: Besides the training set, the other remaining part can also be explored. In case not changing the original data, we can create a copy of the dataset.<br>Visualize Geographical data: For geographical information.<br>Look for correlations: We can compute the standard correlation coefficient by using the corr() method. Besides, we can subtract some relationships by drawing the scatter matrix of the features by finding whether there exist some downward or upward slopes.<br>Experiments with attribute combinations: After finding out some correlations we can construct new features for the dataset and check their performance.<br>Prepare the data for Machine Learning algorithms: We can use the transformation more easily on any dataset.<br>Data cleaning: First, we need to have a cleaning training dataset by dropping the target values, we can choose to get rid of the corresponding districts dropna(), the whole attributes drop(), or set values by fillna(). In sklearn, the simple imputer provides such as median methods to fill the null value in some numerical features.<br>Handling text and categorical attributes: For those text features, we can encode them with OrdinalEncoder in sklearn.processing and draw OneHotEncoder to present the relationships among features and the target value.<br>Custom transformers: Besides the Scikit-Learn, we can specifically own transformers by defining new classes and functions according to the target dataset.<br>Feature Scaling: We can use min-max scaling or standardization to control the scale of the attributes. MinMaxScaler is a transformer in Scikit-Learn.<br>Transformation pipelines: The pipeline constructor takes a list of name&#x2F;estimator pairs defining a sequence of steps. It expresses the same methods as the final estimators. Scikit-Learn provides ColumnTransformer to use a single transformer to handle all columns.<br>Select and Train a model: To begin with, we need to train and evaluate the training set and linear regression is a simple way to start with. Then we can improve the evaluation by using cross-validation. Instead of using train_test_split, we can take Scikit-Learn’s K-fold cross-validation feature. The random forest regressor is a kind of building a model on top of many other models, ensemble learning.<br>Fine-tune the model:  Grid search is a way to fiddle with the hyperparameters manually, usually trying out consecutive values of the parameter. Another method is a randomized search which can select a random value for each hyperparameter at every iteration. If we want to combine multiple models to perform better we can use ensemble methods.<br>Analyze the best models and their errors: The RandomForestRegressor can indicate the relative importance of each attribute for making accurate predictions. We can call <em>features_importances</em> to compare their importance scores.<br>Evaluate the system on the test set: After getting the predictors and the labels from the test set, we run the full_pipeline to transform the data and then evaluate the model by the scores or the errors we set before.</p>
 
             </div>
 
@@ -232,16 +231,16 @@
                     <div class="article-copyright-info-container">
     <ul class="copyright-info-content">
         <li>
-            <span class="type">本文标题</span>：<span class="content">SQL-learning-notes-1</span>
+            <span class="type">本文标题</span>：<span class="content">machine-learning-note</span>
         </li>
         <li>
             <span class="type">本文作者</span>：<span class="content">Wanli Du</span>
         </li>
         <li>
-            <span class="type">创建时间</span>：<span class="content">2023-01-12 19:41:46</span>
+            <span class="type">创建时间</span>：<span class="content">2023-02-02 19:52:34</span>
         </li>
         <li class="post-link">
-            <span class="type">本文链接</span>：<span class="content">2023/01/12/SQL-learning-notes-1/</span>
+            <span class="type">本文链接</span>：<span class="content">2023/02/02/machine-learning-note/</span>
         </li>
         <li>
             <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
@@ -257,29 +256,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/02/02/machine-learning-note/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">machine-learning-note</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/01/11/SQL-questions-1/"
+                               href="/2023/01/12/SQL-learning-notes-1/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">SQL-questions-1</span>
+                                <span class="post-nav-title-item">SQL-learning-notes-1</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
